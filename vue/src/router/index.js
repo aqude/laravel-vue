@@ -3,6 +3,8 @@ import Login from "../views/Login.vue";
 import DataList from "../views/DataList.vue";
 import Register from "../views/Register.vue";
 import Settings from "../views/Settings.vue";
+import Profile from "../views/Profile.vue";
+import Loginout from "../views/Loginout.vue";
 const routes = [
     {
         path: '/login',
@@ -24,12 +26,18 @@ const routes = [
         name: 'settings',
         component: Settings
     },
-    // {
-    //     path: '/login',
-    //     name: 'login',
-    //     component: Login
-    // },
+    {
+        path: '/login-out',
+        name: 'login-out',
+        component: Loginout
+    },
+    {
+        path: '/profile',
+        name: 'profile',
+        component: Profile
+    }
 ];
+
 const router = createRouter({
     history: createWebHistory(),
     routes
