@@ -5,6 +5,8 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Settings from "./Settings.vue";
 import login from "./Login.vue";
+import '@fortawesome/fontawesome-free/css/all.css';
+import MenuCreatePost from "../components/MenuCreatePost.vue";
 
 const user = {
     name: 'Tom Cook',
@@ -26,6 +28,28 @@ const userNavigation = [
 ]
 </script>
 
+<script>
+import MenuCreatePost from "../components/MenuCreatePost.vue";
+
+export default {
+    components: {
+        MenuCreatePost,
+    },
+    data() {
+        return {
+            modalOpen: false,
+        };
+    },
+    methods: {
+        openModal() {
+            this.modalOpen = true;
+        },
+        closeModal() {
+            this.modalOpen = false
+        }
+    },
+};
+</script>
 <template>
     <!--
       <html class="h-full bg-gray-100">
@@ -41,6 +65,9 @@ const userNavigation = [
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
+                                <button @click="openModal" class="bg-blue-500 hover:bg-blue-700 text-white rounded-md px-3 py-2 text-sm font-medium mr-6">
+                                    <i class="fas fa-plus"></i> Добавить
+                                </button>
                                 <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
                             </div>
                         </div>
@@ -51,8 +78,6 @@ const userNavigation = [
                                 <span class="sr-only">View notifications</span>
                                 <BellIcon class="h-6 w-6" aria-hidden="true" />
                             </button>
-
-                            <!-- Profile dropdown -->
                             <Menu as="div" class="relative ml-3">
                                 <div>
                                     <MenuButton class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -107,12 +132,14 @@ const userNavigation = [
         </Disclosure>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                <MenuCreatePost :is-open.sync="modalOpen" @update:is-open="modalOpen = $event"></MenuCreatePost>
                 <!-- Your content -->
                 <h1>Тут список документов с кнопками (редактировать имя, удалить и что-то ещё)</h1>
             </div>
         </main>
     </div>
 </template>
+
 
 <style scoped>
 
