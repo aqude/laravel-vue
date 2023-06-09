@@ -7,7 +7,7 @@ import Settings from "./Settings.vue";
 import login from "./Login.vue";
 import '@fortawesome/fontawesome-free/css/all.css';
 import MenuCreatePost from "../components/MenuCreatePost.vue";
-
+import Table from "../components/Table.vue";
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -134,6 +134,7 @@ export default {
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 <MenuCreatePost :is-open.sync="modalOpen" @update:is-open="modalOpen = $event"></MenuCreatePost>
                 <!-- Your content -->
+                <Table></Table>
                 <h1>Тут список документов с кнопками (редактировать имя, удалить и что-то ещё)</h1>
             </div>
         </main>
