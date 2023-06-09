@@ -4,6 +4,7 @@ import {defineComponent} from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Settings from "./Settings.vue";
+import login from "./Login.vue";
 
 const user = {
     name: 'Tom Cook',
@@ -19,9 +20,9 @@ const navigation = [
     { name: 'Прочее', href: '#', current: false },
 ]
 const userNavigation = [
-    { name: 'Ваш профиль', path: '#' },
+    { name: 'Ваш профиль', path: 'profile' },
     { name: 'Настройка', path: 'settings' },
-    { name: 'Выйти', path: '#' },
+    { name: 'Выйти', path: 'login-out' },
 ]
 </script>
 
@@ -63,7 +64,6 @@ const userNavigation = [
                                     <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                         <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
                                             <router-link :to="item.path || { name: item.name }" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</router-link>
-
                                         </MenuItem>
                                     </MenuItems>
                                 </transition>
@@ -105,15 +105,10 @@ const userNavigation = [
                 </div>
             </DisclosurePanel>
         </Disclosure>
-
-        <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
-            </div>
-        </header>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 <!-- Your content -->
+                <h1>Тут список документов с кнопками (редактировать имя, удалить и что-то ещё)</h1>
             </div>
         </main>
     </div>
