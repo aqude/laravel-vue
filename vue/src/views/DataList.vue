@@ -24,7 +24,7 @@ const navigation = [
 const userNavigation = [
     { name: 'Ваш профиль', path: 'profile' },
     { name: 'Настройка', path: 'settings' },
-    { name: 'Выйти', path: 'login-out' },
+    { name: 'Выйти', path: 'login'}, // login-out надо реализовать
 ]
 </script>
 
