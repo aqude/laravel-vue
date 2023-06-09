@@ -1,13 +1,13 @@
 <script>
 import {defineComponent} from 'vue'
-
+import Login from "./Login.vue";
 export default defineComponent({
     name: "Loginout"
 })
 </script>
 
 <template>
-<h1>Loginout</h1>
+
 </template>
 
 <style scoped>
