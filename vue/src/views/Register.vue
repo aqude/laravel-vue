@@ -2,6 +2,7 @@
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, sameAs } from '@vuelidate/validators'
 import { computed, reactive } from 'vue'
+import router from "../router/index.js";
 
 export default {
     setup() {
@@ -30,7 +31,8 @@ export default {
 
             if (isFormValid.value) {
                 // Отправка данных формы
-                console.log(data)
+                console.log(data);
+                router.push('/');
             }
         }
 
