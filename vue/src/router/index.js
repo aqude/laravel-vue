@@ -1,10 +1,10 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Login from "../views/Login.vue";
-import DataList from "../views/DataList.vue";
 import Register from "../views/Register.vue";
 import Settings from "../views/Settings.vue";
 import Profile from "../views/Profile.vue";
 import Loginout from "../views/Loginout.vue";
+import Main from "../views/Main.vue";
 const routes = [
     {
         path: '/login',
@@ -12,9 +12,9 @@ const routes = [
         component: Login
     },
     {
-        path: '/datalist',
-        name: 'dataList',
-        component: DataList
+        path: '/',
+        name: '',
+        component: Main
     },
     {
         path: '/register',
