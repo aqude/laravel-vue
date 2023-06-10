@@ -1,7 +1,7 @@
 {
   "name": "vue",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,8 @@
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "@tailwindcss/forms": "^0.5.3",
+    "@vuelidate/core": "^2.0.2",
+    "@vuelidate/validators": "^2.0.2",
     "heroicons": "^2.0.18",
     "vue": "^3.2.47",
     "vue-router": "^4.0.13"
