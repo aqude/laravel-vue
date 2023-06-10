@@ -132,10 +132,10 @@ export default {
         </Disclosure>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+<!--                Модальное окно -->
                 <MenuCreatePost :is-open.sync="modalOpen" @update:is-open="modalOpen = $event"></MenuCreatePost>
-                <!-- Your content -->
+<!--                Таблица с даннымим -->
                 <Table></Table>
-                <h1>Тут список документов с кнопками (редактировать имя, удалить и что-то ещё)</h1>
             </div>
         </main>
     </div>
