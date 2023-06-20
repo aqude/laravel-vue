@@ -23,8 +23,9 @@ export default {
     <div>
         <div v-if="isOpen" class="fixed inset-0 flex items-center justify-center z-50">
             <div class="bg-white rounded p-8">
-                <h2 class="text-2xl font-bold mb-4">Модальное окно</h2>
-                <p>Привет, я модальное окно!</p>
+                <h2 class="text-2xl font-bold mb-4">Добавление документа</h2>
+                <p>Загрузите файл</p>
+                <input type="file" ref="docs">
                 <button @click="closeModal" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
                     Закрыть
                 </button>
